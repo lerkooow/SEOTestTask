@@ -50,12 +50,13 @@
   display: flex;
   align-items: center;
   gap: 7px;
+  max-height: 36px;
 }
 
 .main::before {
   content: "●";
-  font-size: 15px;
-  margin-bottom: 2px;
+  font-size: 20px;
+  margin-bottom: 4px;
 }
 
 .contacts-section {
@@ -161,6 +162,15 @@
   z-index: 3;
 }
 
+.mobile-menu img {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  cursor: pointer;
+}
+
 .mobile-menu.active {
   left: 0;
 }
@@ -181,4 +191,10 @@
   color: var(--color-main);
   font-size: 18px;
   font-weight: 500;
+}
+
+.menu.mobile img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
 }
