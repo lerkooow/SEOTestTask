@@ -1,0 +1,17 @@
+:root {
+  --color-mainGradient: #393939;
+  --color-mainLight: #a5c6f6;
+  --color-main: #0c47a0;
+  --color-main4: #f4f4f4;
+  --color-text1: #393939;
+
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-text1);
+}
