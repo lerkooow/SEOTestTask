@@ -8,4 +8,6 @@ loadComponent("header", "components/header.html");
 loadComponent("servicesPanel", "components/servicesPanel.html");
 loadComponent("promo", "components/promo.html");
 loadComponent("data-growth", "components/data-growth.html");
+loadComponent("advantages", "components/advantages.html");
+
 
