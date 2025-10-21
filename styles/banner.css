@@ -1,0 +1,188 @@
+.banner-container {
+  position: relative;
+  max-width: 1312px;
+  width: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  margin: 0 auto 130px auto;
+  background: linear-gradient(135deg, #0a1628 0%, #1a2b4a 50%, #0f1b35 100%);
+}
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.banner-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 26px 31px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-left--content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.banner-title {
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 39px;
+}
+
+.banner-subtitle {
+  color: #939393;
+  margin-bottom: 13px;
+}
+
+.countdown {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 30px;
+}
+
+.countdown-item {
+  text-align: center;
+}
+
+.countdown-number {
+  background-color: #252b38;
+  border-radius: 33px;
+  padding: 4px;
+  text-align: center;
+  display: inline-block;
+}
+
+.countdown-number p {
+  font-size: 128px;
+  line-height: 1;
+  margin: 0;
+}
+
+#days {
+  background: linear-gradient(90deg, #0c47a0 0%, #2363b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+#hours {
+  background: linear-gradient(90deg, #367cbe 0%, #4791c9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+#minutes {
+  background: linear-gradient(90deg, #58a7d5 0%, #68bbe1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+#seconds {
+  background: linear-gradient(90deg, #78cfec 0%, #88e4f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.countdown-label {
+  color: #939393;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+.promo-text {
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 8px 10px;
+  background: #ffffff;
+  font-size: 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  gap: 4px;
+}
+
+.right-content {
+  max-width: 404px;
+  width: 100%;
+  background: #ffffff36;
+  backdrop-filter: blur(73px);
+  border-radius: 33px;
+  padding: 23px 21px;
+  position: relative;
+  height: 251px;
+}
+
+.chart-img {
+  position: absolute;
+  bottom: 24px;
+  right: 46px;
+}
+
+.chart-header {
+  margin-bottom: 20px;
+}
+
+.chart-badge {
+  color: #ffffff;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.chart-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.chart-subtitle {
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.colon {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 25px;
+}
+
+.colon-first {
+  color: #2b6eb5;
+}
+
+.colon-second {
+  color: #4c97cd;
+}
+
+.colon-third {
+  color: #6dc1e4;
+}

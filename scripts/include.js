@@ -10,6 +10,8 @@ loadComponent("promo", "components/promo.html");
 loadComponent("data-growth", "components/data-growth.html");
 loadComponent("advantages", "components/advantages.html");
 loadComponent("service", "components/service.html");
+loadComponent("banner", "components/banner.html");
+
 
 
 
