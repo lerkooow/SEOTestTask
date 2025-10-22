@@ -337,8 +337,12 @@
   display: none;
 }
 
-@media (max-width: 1311px) {
+@media (max-width: 1350px) {
   .promo-cards {
+    padding: 0 24px;
+  }
+
+  .promo-stats {
     padding: 0 24px;
   }
 
