@@ -24,7 +24,7 @@ function initPromoCards() {
             smallTitle: 'Digital продукты'
         },
         '03': {
-            title: 'Маркетинг',
+            title: 'МАРКЕТИНГ',
             text: 'Настраиваем и ведем рекламу, продвигаем в соцсетях, привлекаем лидов и повышаем лояльность.',
             icon: '/icons/marketing.svg',
             bg: '/images/bg3.jpg',
@@ -47,7 +47,7 @@ function initPromoCards() {
             isBlue: true
         },
         '06': {
-            title: 'Дизайн',
+            title: 'ДИЗАЙН',
             text: 'Создаем целостный визуальный образ бренда: от логотипа и айдентики до дизайна интерфейсов.',
             icon: '/icons/design.svg',
             bg: '/images/bg6.jpg',
