@@ -13,7 +13,7 @@ function initAdvantagesCards() {
         return;
     }
 
-    const advantagesCards = advantagesContainer.querySelectorAll('.advantages-card');
+    const advantagesCards = advantagesContainer.querySelectorAll('.advantages__card');
 
     if (advantagesCards.length === 0) {
         setTimeout(initAdvantagesCards, 100);
@@ -27,7 +27,7 @@ function initAdvantagesCards() {
             e.preventDefault();
             e.stopPropagation();
 
-            this.classList.toggle('active');
+            this.classList.toggle('advantages__card--active');
         });
     });
 }
@@ -40,9 +40,9 @@ function initAdvantagesSlider() {
         return;
     }
 
-    const slider = advantagesContainer.querySelector(".advantages-cards");
-    const dotsContainer = advantagesContainer.querySelector(".advantages-slider-dots");
-    const cards = advantagesContainer.querySelectorAll(".advantages-cards .advantages-card");
+    const slider = advantagesContainer.querySelector(".advantages__cards");
+    const dotsContainer = advantagesContainer.querySelector(".advantages__slider-dots");
+    const cards = advantagesContainer.querySelectorAll(".advantages__cards .advantages__card");
 
     if (!slider || !dotsContainer || !cards.length) {
         return;
@@ -78,12 +78,12 @@ function initAdvantagesSlider() {
 
         for (let i = 0; i < totalDots; i++) {
             const dot = document.createElement('span');
-            dot.className = 'dot';
-            if (i === 0) dot.classList.add('active');
+            dot.className = 'advantages__slider-dot';
+            if (i === 0) dot.classList.add('advantages__slider-dot--active');
             dotsContainer.appendChild(dot);
         }
 
-        return dotsContainer.querySelectorAll('.dot');
+        return dotsContainer.querySelectorAll('.advantages__slider-dot');
     }
 
     let dots = createDots();
@@ -99,7 +99,7 @@ function initAdvantagesSlider() {
         const clampedIndex = Math.max(0, Math.min(index, dots.length - 1));
 
         dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === clampedIndex);
+            dot.classList.toggle("advantages__slider-dot--active", i === clampedIndex);
         });
     };
 
@@ -120,7 +120,7 @@ function initAdvantagesSlider() {
                 });
 
                 dots.forEach((d, i) => {
-                    d.classList.toggle("active", i === index);
+                    d.classList.toggle("advantages__slider-dot--active", i === index);
                 });
             });
         });
