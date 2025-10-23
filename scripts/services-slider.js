@@ -1,24 +1,16 @@
 function initServiceSlider() {
-    const serviceContainer = document.querySelector('.service');
+    const servicesContainer = document.querySelector('.services');
 
-    if (!serviceContainer || !serviceContainer.innerHTML.trim()) {
+    if (!servicesContainer || !servicesContainer.innerHTML.trim()) {
         setTimeout(initServiceSlider, 100);
         return;
     }
 
-    const slider = serviceContainer.querySelector(".service-slider");
-    const dotsContainer = serviceContainer.querySelector(".service-slider-dots");
-    const cards = serviceContainer.querySelectorAll(".service-slider .service-card");
-
-    console.log('Поиск элементов слайдера услуг:', {
-        serviceContainer: !!serviceContainer,
-        slider: !!slider,
-        dotsContainer: !!dotsContainer,
-        cardsFound: cards.length
-    });
+    const slider = servicesContainer.querySelector(".services__slider");
+    const dotsContainer = servicesContainer.querySelector(".services__dots");
+    const cards = servicesContainer.querySelectorAll(".services__slider .services__card");
 
     if (!slider || !dotsContainer || !cards.length) {
-        console.log('Не все элементы слайдера услуг найдены');
         return;
     }
 
@@ -39,33 +31,20 @@ function initServiceSlider() {
 
         const totalDots = Math.max(1, cards.length - visibleCards + 1);
 
-        console.log('Создание точек слайдера услуг:', {
-            sliderWidth,
-            cardWidth,
-            visibleCards,
-            totalCards: cards.length,
-            totalDots
-        });
 
         dotsContainer.innerHTML = '';
 
         for (let i = 0; i < totalDots; i++) {
             const dot = document.createElement('span');
-            dot.className = 'dot';
-            if (i === 0) dot.classList.add('active');
+            dot.className = 'services__dot';
+            if (i === 0) dot.classList.add('services__dot--active');
             dotsContainer.appendChild(dot);
         }
 
-        return dotsContainer.querySelectorAll('.dot');
+        return dotsContainer.querySelectorAll('.services__dot');
     }
 
     let dots = createDots();
-
-    console.log('Инициализация слайдера услуг успешна:', {
-        slider: !!slider,
-        dotsCount: dots.length,
-        cardsCount: cards.length
-    });
 
     const updateActiveDot = () => {
         const scrollLeft = slider.scrollLeft;
@@ -75,15 +54,8 @@ function initServiceSlider() {
         const index = Math.round(scrollLeft / (cardWidth + gap));
         const clampedIndex = Math.max(0, Math.min(index, dots.length - 1));
 
-        console.log('Обновление точки слайдера услуг:', {
-            scrollLeft,
-            cardWidth,
-            index: clampedIndex,
-            dotsLength: dots.length
-        });
-
         dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === clampedIndex);
+            dot.classList.toggle("services__dot--active", i === clampedIndex);
         });
     };
 
@@ -91,13 +63,10 @@ function initServiceSlider() {
         dots.forEach((dot, index) => {
             dot.addEventListener("click", (e) => {
                 e.preventDefault();
-                console.log('Клик по точке слайдера услуг:', index);
 
                 const cardWidth = cards[0].offsetWidth;
                 const gap = 18;
                 const scrollPosition = (cardWidth + gap) * index;
-
-                console.log('Прокрутка к позиции:', scrollPosition);
 
                 slider.scrollTo({
                     left: scrollPosition,
@@ -105,7 +74,7 @@ function initServiceSlider() {
                 });
 
                 dots.forEach((d, i) => {
-                    d.classList.toggle("active", i === index);
+                    d.classList.toggle("services__dot--active", i === index);
                 });
             });
         });

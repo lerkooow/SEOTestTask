@@ -25,7 +25,7 @@
 }
 
 .advantages__title span {
-  color: #0c47a0;
+  color: var(--color-main);
 }
 
 .advantages__right {
@@ -106,22 +106,22 @@
   left: 39px;
   width: 76px;
   height: 76px;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--white);
   border-radius: 50%;
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .advantages__card-number--other {
   top: auto;
   left: 39px;
   bottom: 41px;
-  border: 1px solid #939393;
-  color: #393939;
+  border: 1px solid var(--color-text2);
+  color: var(--color-text1);
 }
 
 .advantages__card-text {
@@ -130,7 +130,7 @@
   left: 39px;
   right: 39px;
   font-size: 36px;
-  color: #ffffff;
+  color: var(--white);
   font-weight: 600;
   z-index: 2;
   line-height: 1.1;
@@ -142,21 +142,20 @@
   right: 39px;
   left: 39px;
   font-size: 36px;
-  color: #ffffff;
+  color: var(--white);
   font-weight: 600;
   z-index: 2;
   line-height: 1.1;
 }
 
 .advantages__card-title {
-  color: #393939;
   position: absolute;
   bottom: 42px;
   left: 39px;
   right: 39px;
   font-size: 36px;
   font-weight: 600;
-  border-top: 1px solid #939393;
+  border-top: 1px solid var(--color-text2);
   line-height: 1.1;
   padding-top: 25px;
 }
@@ -167,11 +166,9 @@
   right: 39px;
   border-top: none;
   max-height: fit-content;
-  border-bottom: 1px solid #939393;
+  border-bottom: 1px solid var(--color-text2);
   padding: 0 0 25px 0;
 }
-
-/* Active */
 
 .advantages__card:not(.advantages__card--active) .advantages__card-description {
   display: none !important;
@@ -182,7 +179,7 @@
 }
 
 .advantages__card--active {
-  background: #f4f4f4 !important;
+  background: var(--color-main4) !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -197,8 +194,8 @@
 }
 
 .advantages__card--active .advantages__card-number {
-  border: 1px solid #939393;
-  color: #393939;
+  border: 1px solid var(--color-text2);
+  color: var(--color-text1);
 }
 
 .advantages__card--active .advantages__card-text {
@@ -208,7 +205,7 @@
 .advantages__card--active .advantages__card-description {
   font-size: 18px;
   display: flex;
-  color: #939393;
+  color: var(--color-text2);
   margin-top: 50%;
   line-height: 1;
 }
@@ -235,13 +232,13 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #d9d9d9;
+  background-color: var(--color-grey);
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .advantages__slider-dot--active {
-  background-color: #0c47a0;
+  background-color: var(--color-main);
 }
 
 @media (max-width: 1350px) {

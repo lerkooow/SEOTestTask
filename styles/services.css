@@ -1,41 +1,34 @@
-.service {
+.services {
   max-width: 1312px;
   margin: 0 auto 40px auto;
 }
 
-.service-header {
+.services__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 22px;
 }
 
-.service-header h1 {
+.services__title {
   font-size: 74px;
   font-weight: 600;
   line-height: 1;
 }
 
-.card-main {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-}
-
-.service-header p {
+.services__subtitle {
   font-size: 18px;
   font-weight: 500;
 }
 
-.services-grid {
+.services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 46px;
 }
 
-.service-card {
-  background: #f4f4f4;
+.services__card {
+  background: var(--color-main4);
   border-radius: 33px;
   padding: 37px 31px;
   position: relative;
@@ -46,68 +39,70 @@
   height: 444px;
 }
 
-.card-top {
+.services__card-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 16px;
-  font-size: 14px;
-  border: 1px solid #393939;
-  line-height: 1.5;
+.services__card-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
-.card-bottom {
+
+.services__card-bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.service-number {
-  font-size: 156px;
-  line-height: 1;
-}
-
-.service-footer {
+.services__card-footer {
   display: flex;
   gap: 6px;
 }
 
-.feature-text {
-  font-size: 13px;
-  font-weight: 500;
-  color: #333;
-}
-
-.service-title {
+.services__card-title {
   font-size: 36px;
   font-weight: 600;
   line-height: 1;
 }
 
-.service-icon {
+.services__badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 14px;
+  border: 1px solid var(--color-text1);
+  line-height: 1.5;
+}
+
+.services__number {
+  font-size: 156px;
+  line-height: 1;
+}
+
+.services__icon {
   display: flex;
   width: 31px;
   height: 30px;
-  border: 1px solid #393939;
+  border: 1px solid var(--color-text1);
   border-radius: 63px;
   justify-content: center;
   align-items: center;
 }
 
-.service-icon img {
+.services__icon img {
   width: 18px;
   height: 18px;
 }
 
-.service-slider {
+.services__slider {
   display: none;
 }
 
-.service-slider-dots {
+.services__dots {
   display: none;
   justify-content: center;
   align-items: center;
@@ -115,108 +110,109 @@
   margin-top: 20px;
 }
 
-.service-slider-dots .dot {
+.services__dot {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #d9d9d9;
+  background: var(--color-grey);
   cursor: pointer;
   border: none;
   outline: none;
 }
 
-.service-slider-dots .dot.active {
-  background: #0c47a0;
+.services__dot--active {
+  background: var(--color-main);
+}
+
+.services__arrow {
+  cursor: pointer;
 }
 
 @media (max-width: 1350px) {
-  .service-header {
+  .services__header {
     padding: 0 24px;
   }
 
-  .service-slider {
+  .services__slider {
     padding-left: 24px;
   }
 
-  .service-number {
+  .services__number {
     font-size: 143px;
   }
 
-  .service-header h1 {
+  .services__title {
     font-size: 64px;
   }
 
-  .service-header p {
+  .services__subtitle {
     max-width: 397px;
   }
 
-  .service-card {
+  .services__card {
     max-height: 369px;
-  }
-
-  .service-card {
     padding: 31px 25px;
   }
 
-  .services-grid {
+  .services__grid {
     gap: 37px;
     padding: 0 24px;
   }
 }
 
 @media (max-width: 1193px) {
-  .services-grid {
+  .services__grid {
     gap: 24px;
   }
 
-  .service-number {
+  .services__number {
     font-size: 120px;
   }
 
-  .service-header p {
+  .services__subtitle {
     text-align: right;
   }
 }
 
 @media (max-width: 1091px) {
-  .services-grid {
+  .services__grid {
     gap: 18px;
   }
 
-  .service-number {
+  .services__number {
     font-size: 79px;
   }
 
-  .service-arrow {
+  .services__arrow {
     width: 50px;
     height: 45px;
   }
 }
 
 @media (max-width: 1024px) {
-  .service-header {
+  .services__header {
     gap: 12px;
   }
 
-  .service-card {
+  .services__card {
     padding: 31px 12px 27px 24px;
   }
 
-  .service-header h1 {
+  .services__title {
     font-size: 48px;
   }
 
-  .service-title {
+  .services__card-title {
     font-size: 24px;
   }
 }
 
 @media (max-width: 949px) {
-  .services-grid {
+  .services__grid {
     display: none;
   }
 
-  .service-slider {
+  .services__slider {
     display: flex !important;
     overflow-x: auto;
     gap: 18px;
@@ -224,11 +220,11 @@
     padding-left: 24px;
   }
 
-  .service-slider::-webkit-scrollbar {
+  .services__slider::-webkit-scrollbar {
     display: none;
   }
 
-  .service-slider .service-card {
+  .services__slider .services__card {
     flex: 0 0 85%;
     scroll-snap-align: center;
     max-width: 314px;
@@ -236,42 +232,42 @@
     width: 100%;
   }
 
-  .service-slider-dots {
+  .services__dots {
     display: flex !important;
   }
 
-  .service-number {
+  .services__number {
     font-size: 128px;
   }
 
-  .badge {
+  .services__badge {
     padding: 5px 10px;
     font-size: 12px;
   }
 }
 
 @media (max-width: 768px) {
-  .service-header {
+  .services__header {
     flex-direction: column;
     align-items: flex-end;
   }
 
-  .service-header h1 {
+  .services__title {
     display: flex;
     width: 100%;
   }
 }
 
 @media (max-width: 541px) {
-  .service-header h1 {
+  .services__title {
     font-size: 36px;
   }
 
-  .service-header p {
+  .services__subtitle {
     font-size: 14px;
   }
 
-  .service-slider .service-card {
+  .services__slider .services__card {
     flex: 0 0 90%;
     max-width: 320px;
     min-width: 280px;
@@ -280,36 +276,36 @@
     gap: 30px;
   }
 
-  .service-number {
+  .services__number {
     font-size: 100px;
   }
 
-  .service-title {
+  .services__card-title {
     font-size: 26px;
   }
 
-  .badge {
+  .services__badge {
     font-size: 12px;
   }
 }
 
 @media (max-width: 390px) {
-  .service-slider .service-card {
+  .services__slider .services__card {
     max-width: 280px;
     min-width: 260px;
     height: 360px;
     padding: 20px 18px;
   }
 
-  .service-header h1 {
+  .services__title {
     font-size: 32px;
   }
 
-  .service-number {
+  .services__number {
     font-size: 90px;
   }
 
-  .service-title {
+  .services__card-title {
     font-size: 24px;
   }
 }

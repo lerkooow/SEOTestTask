@@ -13,8 +13,6 @@ function initPromoCards() {
         return;
     }
 
-    console.log('Найдено карточек:', allCards.length);
-
     const cardData = {
         '02': {
             title: 'DIGITAL ПРОДУКТЫ',

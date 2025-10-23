@@ -10,15 +10,7 @@ function initPromoSlider() {
     const dotsContainer = promoContainer.querySelector(".promo__slider-dots");
     const cards = promoContainer.querySelectorAll(".promo__slider .promo__card--active");
 
-    console.log('Поиск элементов слайдера:', {
-        promoContainer: !!promoContainer,
-        slider: !!slider,
-        dotsContainer: !!dotsContainer,
-        cardsFound: cards.length
-    });
-
     if (!slider || !dotsContainer || !cards.length) {
-        console.log('Не все элементы слайдера найдены');
         return;
     }
 
@@ -39,14 +31,6 @@ function initPromoSlider() {
 
         const totalDots = Math.max(1, cards.length - visibleCards + 1);
 
-        console.log('Создание точек:', {
-            sliderWidth,
-            cardWidth,
-            visibleCards,
-            totalCards: cards.length,
-            totalDots
-        });
-
         dotsContainer.innerHTML = '';
 
         for (let i = 0; i < totalDots; i++) {
@@ -61,12 +45,6 @@ function initPromoSlider() {
 
     let dots = createDots();
 
-    console.log('Инициализация слайдера успешна:', {
-        slider: !!slider,
-        dotsCount: dots.length,
-        cardsCount: cards.length
-    });
-
     const updateActiveDot = () => {
         const scrollLeft = slider.scrollLeft;
         const cardWidth = cards[0].offsetWidth;
@@ -74,13 +52,6 @@ function initPromoSlider() {
 
         const index = Math.round(scrollLeft / (cardWidth + gap));
         const clampedIndex = Math.max(0, Math.min(index, dots.length - 1));
-
-        console.log('Обновление точки:', {
-            scrollLeft,
-            cardWidth,
-            index: clampedIndex,
-            dotsLength: dots.length
-        });
 
         dots.forEach((dot, i) => {
             dot.classList.toggle("promo__slider-dot--active", i === clampedIndex);
@@ -91,13 +62,11 @@ function initPromoSlider() {
         dots.forEach((dot, index) => {
             dot.addEventListener("click", (e) => {
                 e.preventDefault();
-                console.log('Клик по точке:', index);
 
                 const cardWidth = cards[0].offsetWidth;
                 const gap = 18;
                 const scrollPosition = (cardWidth + gap) * index;
 
-                console.log('Прокрутка к позиции:', scrollPosition);
 
                 slider.scrollTo({
                     left: scrollPosition,
