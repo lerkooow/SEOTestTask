@@ -126,6 +126,11 @@
 
 .services__arrow {
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.services__arrow:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 1350px) {

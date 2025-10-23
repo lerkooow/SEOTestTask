@@ -64,6 +64,10 @@
   align-items: center;
 }
 
+.header__contacts img {
+  cursor: pointer;
+}
+
 .header__phone {
   display: flex;
   align-items: center;

@@ -66,7 +66,7 @@ function initPromoCards() {
                     <p class="promo__active-text">${data.text}</p>
                     <a href="#" class="promo__btn-more">
                         Подробнее
-                        <img src="/icons/arrowBlack.svg" alt="Arrow Black" />
+                        <img src="/icons/arrow-black.svg" alt="arrow right" />
                     </a>
                 </div>
             </div>
