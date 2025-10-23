@@ -160,6 +160,7 @@
 
   .services-grid {
     gap: 37px;
+    padding: 0 24px;
   }
 }
 
@@ -220,6 +221,7 @@
     overflow-x: auto;
     gap: 18px;
     width: 100%;
+    padding-left: 24px;
   }
 
   .service-slider::-webkit-scrollbar {
@@ -288,7 +290,6 @@
 
   .badge {
     font-size: 12px;
-    padding: 3px 8px;
   }
 }
 

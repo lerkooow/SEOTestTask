@@ -2,11 +2,12 @@
   position: relative;
   max-width: 1312px;
   width: 100%;
-  border-radius: 32px;
-  overflow: hidden;
+  border-radius: 33px;
+  overflow: visible;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  margin: 0 auto 130px auto;
+  margin: 0 auto clamp(60px, 10vw, 130px) auto;
   background: linear-gradient(135deg, #0a1628 0%, #1a2b4a 50%, #0f1b35 100%);
+  transition: border-radius 0.3s ease, margin 0.3s ease;
 }
 
 .banner-bg {
@@ -17,15 +18,18 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  border-radius: 33px;
 }
 
 .banner-wrapper {
   position: relative;
   z-index: 1;
-  padding: 26px 31px;
+  padding: clamp(16px, 2.5vw, 31px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: padding 0.3s ease;
+  overflow: visible;
 }
 
 .banner-left--content {
@@ -35,21 +39,25 @@
 
 .banner-title {
   color: #ffffff;
-  font-size: 52px;
+  font-size: clamp(30px, 3vw, 52px);
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 39px;
+  margin-bottom: clamp(12px, 3vw, 39px);
+  transition: font-size 0.3s ease, margin-bottom 0.3s ease;
 }
 
 .banner-subtitle {
   color: #939393;
   margin-bottom: 13px;
+  font-size: clamp(12px, 1.2vw, 14px);
+  transition: font-size 0.3s ease;
 }
 
 .countdown {
   display: flex;
   gap: 4px;
   margin-bottom: 30px;
+  transition: gap 0.3s ease;
 }
 
 .countdown-item {
@@ -62,12 +70,14 @@
   padding: 4px;
   text-align: center;
   display: inline-block;
+  transition: border-radius 0.3s ease, padding 0.3s ease;
 }
 
 .countdown-number p {
-  font-size: 128px;
+  font-size: clamp(56px, 7vw, 128px);
   line-height: 1;
   margin: 0;
+  transition: font-size 0.3s ease;
 }
 
 #days {
@@ -104,27 +114,36 @@
 
 .countdown-label {
   color: #939393;
-  font-size: 18px;
+  font-size: clamp(10px, 1.5vw, 18px);
   margin-top: 4px;
+  transition: font-size 0.3s ease;
 }
 
 .banner-text {
   color: #ffffff;
-  font-size: 20px;
+  font-size: clamp(14px, 1.8vw, 20px);
   line-height: 1;
   margin-bottom: 30px;
+  font-weight: 500;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 8px 10px;
+  padding: clamp(8px, 1vw, 10px) clamp(10px, 1.2vw, 16px);
   background: #ffffff;
-  font-size: 14px;
-  border-radius: 16px;
+  font-size: clamp(12px, 1.2vw, 14px);
+  border-radius: clamp(16px, 1.8vw, 20px);
   cursor: pointer;
   border: none;
   display: flex;
-  gap: 4px;
+  gap: clamp(4px, 0.6vw, 8px);
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.cta-button img {
+  width: clamp(14px, 1.4vw, 18px);
+  height: clamp(14px, 1.4vw, 18px);
 }
 
 .right-content {
@@ -135,44 +154,48 @@
   border-radius: 33px;
   padding: 23px 21px;
   position: relative;
-  height: 251px;
+  height: auto;
+  min-height: 251px;
 }
 
 .chart-img {
   position: absolute;
-  bottom: 24px;
-  right: 46px;
+  bottom: clamp(12px, 2vw, 24px);
+  right: clamp(16px, 3.5vw, 46px);
+  max-width: clamp(160px, 15vw, 220px);
+  height: auto;
 }
 
 .chart-header {
-  margin-bottom: 20px;
+  margin-bottom: clamp(16px, 1.8vw, 20px);
 }
 
 .chart-badge {
   color: #ffffff;
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-bottom: clamp(8px, 1vw, 10px);
 }
 
 .chart-title {
   color: #ffffff;
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 14px;
-  line-height: 1;
+  margin-bottom: clamp(10px, 1.2vw, 14px);
+  line-height: 1.2;
 }
 
 .chart-subtitle {
   color: #ffffff;
   font-size: 12px;
   line-height: 1;
+  max-width: 176px;
 }
 
 .colon {
-  font-size: 72px;
+  font-size: clamp(35px, 6vw, 72px);
   font-weight: 700;
   line-height: 1;
-  padding-top: 25px;
+  padding-top: 12px;
 }
 
 .colon-first {
@@ -185,4 +208,97 @@
 
 .colon-third {
   color: #6dc1e4;
+}
+
+@media (max-width: 1350px) {
+  .banner {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 949px) {
+  .right-content {
+    max-width: 225px;
+  }
+
+  .countdown-number {
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  .banner-container {
+    margin-bottom: clamp(100px, 15vw, 180px);
+  }
+
+  .banner-wrapper {
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 30px);
+    padding-bottom: 0;
+    height: 600px;
+    align-items: start;
+  }
+
+  .banner-left--content {
+    max-width: 100%;
+  }
+
+  .right-content {
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    margin: 0 auto;
+    height: 251px;
+    right: 0;
+  }
+
+  .chart-img {
+    max-width: 220px;
+  }
+
+  .chart-subtitle {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .chart-badge {
+    font-size: 14px;
+  }
+
+  .chart-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 425px) {
+  .chart-subtitle {
+    font-size: 12px;
+  }
+
+  .chart-badge {
+    font-size: 12px;
+  }
+
+  .chart-title {
+    font-size: 20px;
+  }
+
+  .countdown {
+    gap: 1px;
+  }
+}
+
+@media (max-width: 390px) {
+  .banner-title {
+    font-size: 22px;
+  }
+
+  .countdown-number p {
+    font-size: clamp(38px, 12vw, 46px);
+  }
+
+  .colon {
+    font-size: 25px;
+  }
 }
