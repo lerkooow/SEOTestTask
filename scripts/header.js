@@ -1,14 +1,14 @@
 function initMobileMenu() {
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const menuClose = document.getElementById("menuClose");
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuClose = document.getElementById("menu-close");
 
     if (!menuToggle || !mobileMenu || !menuClose) {
         setTimeout(initMobileMenu, 100);
         return;
     }
 
-    const menuLinks = mobileMenu.querySelectorAll("a");
+    const menuLinks = mobileMenu.querySelectorAll(".mobile-menu__link");
 
     menuToggle.addEventListener("click", () => {
         mobileMenu.classList.toggle("active");
@@ -31,8 +31,8 @@ function initMobileMenu() {
 }
 
 function initNavigation() {
-    const navLinks = document.querySelectorAll(".nav-links a");
-    const mobileNavLinks = document.querySelectorAll(".mobile-menu a");
+    const navLinks = document.querySelectorAll(".header__link");
+    const mobileNavLinks = document.querySelectorAll(".mobile-menu__link");
 
     if (navLinks.length === 0) {
         setTimeout(initNavigation, 100);
@@ -40,15 +40,19 @@ function initNavigation() {
     }
 
     function setActiveLink(clickedLink, allLinks) {
-        allLinks.forEach(link => link.classList.remove("main"));
-        clickedLink.classList.add("main");
+        allLinks.forEach((link) =>
+            link.classList.remove("header__link--main")
+        );
+        clickedLink.classList.add("header__link--main");
     }
 
     navLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
+        link.addEventListener("click", () => {
             setActiveLink(link, navLinks);
             const href = link.getAttribute("href");
-            const correspondingMobileLink = document.querySelector(`.mobile-menu a[href="${href}"]`);
+            const correspondingMobileLink = document.querySelector(
+                `.mobile-menu__link[href="${href}"]`
+            );
             if (correspondingMobileLink) {
                 setActiveLink(correspondingMobileLink, mobileNavLinks);
             }
@@ -56,10 +60,12 @@ function initNavigation() {
     });
 
     mobileNavLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
+        link.addEventListener("click", () => {
             setActiveLink(link, mobileNavLinks);
             const href = link.getAttribute("href");
-            const correspondingDesktopLink = document.querySelector(`.nav-links a[href="${href}"]`);
+            const correspondingDesktopLink = document.querySelector(
+                `.header__link[href="${href}"]`
+            );
             if (correspondingDesktopLink) {
                 setActiveLink(correspondingDesktopLink, navLinks);
             }
@@ -67,8 +73,8 @@ function initNavigation() {
     });
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
         initMobileMenu();
         initNavigation();
     });
