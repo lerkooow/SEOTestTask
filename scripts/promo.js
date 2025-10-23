@@ -6,7 +6,7 @@ function initPromoCards() {
         return;
     }
 
-    const allCards = promoContainer.querySelectorAll('.promo-card');
+    const allCards = promoContainer.querySelectorAll('.promo__card--small, .promo__card--active');
 
     if (allCards.length === 0) {
         setTimeout(initPromoCards, 100);
@@ -57,16 +57,16 @@ function initPromoCards() {
 
     function createActiveCard(number, data) {
         return `
-            <img class="bg" src="${data.bg}" alt="Background" />
-            <div class="blur">
-                <span class="numberFour">${number}</span>
-                <div class="icon-circle">
+            <img class="promo__bg" src="${data.bg}" alt="Background" />
+            <div class="promo__blur">
+                <span class="promo__number--four">${number}</span>
+                <div class="promo__icon-circle">
                     <img src="${data.icon}" alt="Icon" />
                 </div>
-                <div class="active-content">
-                    <p class="active-title">${data.title}</p>
-                    <p class="active-text">${data.text}</p>
-                    <a href="#" class="btn-more">
+                <div class="promo__active-content">
+                    <p class="promo__active-title">${data.title}</p>
+                    <p class="promo__active-text">${data.text}</p>
+                    <a href="#" class="promo__btn-more">
                         Подробнее
                         <img src="/icons/arrowBlack.svg" alt="Arrow Black" />
                     </a>
@@ -83,27 +83,27 @@ function initPromoCards() {
     }
 
     promoContainer.addEventListener('click', (e) => {
-        const card = e.target.closest('.promo-card.small');
+        const card = e.target.closest('.promo__card--small');
 
         if (!card) return;
 
         const cardNumber = card.querySelector('span').textContent;
 
-        const allCardsNow = promoContainer.querySelectorAll('.promo-card');
+        const allCardsNow = promoContainer.querySelectorAll('.promo__card--small, .promo__card--active');
         allCardsNow.forEach(otherCard => {
-            if (otherCard.classList.contains('active')) {
-                const activeNumber = otherCard.querySelector('.numberFour').textContent;
+            if (otherCard.classList.contains('promo__card--active')) {
+                const activeNumber = otherCard.querySelector('.promo__number--four').textContent;
                 const activeData = cardData[activeNumber];
 
                 if (activeData) {
-                    otherCard.className = `promo-card small${activeData.isBlue ? ' blue' : ''}`;
+                    otherCard.className = `promo__card--small${activeData.isBlue ? ' promo__card--small-blue' : ''}`;
                     otherCard.innerHTML = createSmallCard(activeNumber, activeData);
                 }
             }
         });
 
         if (cardData[cardNumber]) {
-            card.className = 'promo-card active';
+            card.className = 'promo__card--active';
             card.innerHTML = createActiveCard(cardNumber, cardData[cardNumber]);
         }
     });

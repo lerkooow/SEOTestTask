@@ -6,9 +6,9 @@ function initPromoSlider() {
         return;
     }
 
-    const slider = promoContainer.querySelector(".promo-slider");
-    const dotsContainer = promoContainer.querySelector(".slider-dots");
-    const cards = promoContainer.querySelectorAll(".promo-slider .promo-card");
+    const slider = promoContainer.querySelector(".promo__slider");
+    const dotsContainer = promoContainer.querySelector(".promo__slider-dots");
+    const cards = promoContainer.querySelectorAll(".promo__slider .promo__card--active");
 
     console.log('Поиск элементов слайдера:', {
         promoContainer: !!promoContainer,
@@ -51,12 +51,12 @@ function initPromoSlider() {
 
         for (let i = 0; i < totalDots; i++) {
             const dot = document.createElement('span');
-            dot.className = 'dot';
-            if (i === 0) dot.classList.add('active');
+            dot.className = 'promo__slider-dot';
+            if (i === 0) dot.classList.add('promo__slider-dot--active');
             dotsContainer.appendChild(dot);
         }
 
-        return dotsContainer.querySelectorAll('.dot');
+        return dotsContainer.querySelectorAll('.promo__slider-dot');
     }
 
     let dots = createDots();
@@ -83,7 +83,7 @@ function initPromoSlider() {
         });
 
         dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === clampedIndex);
+            dot.classList.toggle("promo__slider-dot--active", i === clampedIndex);
         });
     };
 
@@ -105,7 +105,7 @@ function initPromoSlider() {
                 });
 
                 dots.forEach((d, i) => {
-                    d.classList.toggle("active", i === index);
+                    d.classList.toggle("promo__slider-dot--active", i === index);
                 });
             });
         });
