@@ -10,7 +10,7 @@ HTML, CSS, JavaScript
 
 ## Ссылка на деплой проекта:
 
-seo-test-task.vercel.app
+https://seo-test-task.vercel.app
 
 ## Установка и запуск приложения:
 
