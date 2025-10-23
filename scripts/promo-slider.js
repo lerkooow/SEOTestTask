@@ -11,6 +11,7 @@ function initPromoSlider() {
     const cards = promoContainer.querySelectorAll(".promo__slider .promo__card--active");
 
     if (!slider || !dotsContainer || !cards.length) {
+        setTimeout(initPromoSlider, 100);
         return;
     }
 
@@ -67,7 +68,6 @@ function initPromoSlider() {
                 const gap = 18;
                 const scrollPosition = (cardWidth + gap) * index;
 
-
                 slider.scrollTo({
                     left: scrollPosition,
                     behavior: "smooth",
@@ -101,8 +101,12 @@ function initPromoSlider() {
     updateActiveDot();
 }
 
+window.addEventListener('promoCardsReady', initPromoSlider);
+
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPromoSlider);
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initPromoSlider, 200);
+    });
 } else {
-    initPromoSlider();
+    setTimeout(initPromoSlider, 200);
 }

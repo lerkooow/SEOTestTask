@@ -105,6 +105,8 @@ function initPromoCards() {
             card.innerHTML = createActiveCard(cardNumber, cardData[cardNumber]);
         }
     });
+
+    window.dispatchEvent(new CustomEvent('promoCardsReady'));
 }
 
 if (document.readyState === 'loading') {
