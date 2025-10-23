@@ -36,8 +36,8 @@
 }
 
 .promo__map-bg {
-  background: linear-gradient(90deg, #0c47a0 0%, #8fecfc 100%);
-  border-image: linear-gradient(90deg, #0c47a0 0%, #8fecfc 100%);
+  background: linear-gradient(90deg, var(--color-main) 0%, #8fecfc 100%);
+  border-image: linear-gradient(90deg, var(--color-main) 0%, #8fecfc 100%);
   border-image-slice: 1;
   max-width: 95px;
   height: 32px;
@@ -66,7 +66,7 @@
 }
 
 .promo__subtitle span {
-  color: #939393;
+  color: var(--color-text2);
   font-weight: 400;
 }
 
@@ -88,7 +88,6 @@
   flex: 5 1 35%;
   border-radius: 30px;
   overflow: hidden;
-  background: var(--dark);
   color: var(--white);
   max-width: 728px;
   width: 100%;
@@ -128,15 +127,15 @@
   padding: 5px 10px;
   border-radius: 12px;
   font-size: 12px;
-  color: #fff;
+  color: var(--white);
   position: relative;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
 }
 
 .promo__tags span:not(:first-child)::before {
   content: "●";
   font-size: 15px;
-  color: #ffffff;
+  color: var(--white);
   position: absolute;
   left: -8px;
   top: 50%;
@@ -160,7 +159,7 @@
 
 .promo__bottom p {
   font-size: 14px;
-  color: #fff;
+  color: var(--white);
   font-weight: 500;
 }
 
@@ -177,7 +176,7 @@
   position: absolute;
   right: -6px;
   bottom: -5px;
-  background: #ffffff;
+  background: var(--white);
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -190,7 +189,7 @@
   font-weight: bold;
   font-size: 18px;
   position: absolute;
-  background: #ffffff;
+  background: var(--white);
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -203,7 +202,7 @@
 
 .promo__card--small {
   border-radius: 30px;
-  background: #0c47a0;
+  background: var(--color-main);
   position: relative;
   font-size: 14px;
   text-align: center;
@@ -224,11 +223,11 @@
   width: 150px;
   font-size: 18px;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .promo__card--small-blue {
-  background: #a5c6f6;
+  background: var(--color-main);
 }
 
 .promo__card--small span {
@@ -238,7 +237,7 @@
   left: 50%;
   bottom: -11px;
   transform: translate(-50%, -50%);
-  background: #ffffff;
+  background: var(--white);
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -258,7 +257,7 @@
 }
 
 .promo__card--active p {
-  color: #fff;
+  color: var(--white);
 }
 
 .promo__card--active .promo__bg {
@@ -286,7 +285,7 @@
   right: 13px;
   width: clamp(66px, 5vw, 73px);
   height: clamp(66px, 5vw, 73px);
-  background: #ffffff;
+  background: var(--white);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -324,6 +323,11 @@
   display: flex;
   max-width: fit-content;
   gap: 4px;
+  transition: transform 0.3s ease;
+}
+
+.promo__btn-more:hover {
+  transform: scale(1.05);
 }
 
 .promo__stats {
@@ -348,14 +352,14 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #d9d9d9;
+  background: var(--color-grey);
   cursor: pointer;
   border: none;
   outline: none;
 }
 
 .promo__slider-dot--active {
-  background: #0c47a0;
+  background: var(--color-main);
 }
 
 @media (max-width: 1350px) {
