@@ -248,7 +248,6 @@
 
   .advantages__cards {
     padding: 60px 24px 50px 24px;
-    gap: 18px;
   }
 
   .advantages__card {
@@ -324,10 +323,6 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 18px;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
   }
 
   .advantages__card--active .advantages__card-description {

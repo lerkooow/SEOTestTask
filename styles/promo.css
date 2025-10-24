@@ -260,17 +260,6 @@
   color: var(--white);
 }
 
-.promo__card--active .promo__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  border-radius: 20px;
-}
-
 .promo__blur {
   background: #024bba42;
   backdrop-filter: blur(73px);
@@ -438,7 +427,7 @@
     display: flex !important;
     overflow-x: auto;
     gap: 18px;
-    padding: 20px 0 20px 20px;
+    padding: 24px;
     width: 100%;
   }
 

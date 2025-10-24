@@ -50,6 +50,14 @@ function initPromoSlider() {
         const scrollLeft = slider.scrollLeft;
         const cardWidth = cards[0].offsetWidth;
         const gap = 18;
+        const maxScrollLeft = slider.scrollWidth - slider.offsetWidth;
+
+        if (scrollLeft >= maxScrollLeft - 5) {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("promo__slider-dot--active", i === dots.length - 1);
+            });
+            return;
+        }
 
         const index = Math.round(scrollLeft / (cardWidth + gap));
         const clampedIndex = Math.max(0, Math.min(index, dots.length - 1));
@@ -66,12 +74,20 @@ function initPromoSlider() {
 
                 const cardWidth = cards[0].offsetWidth;
                 const gap = 18;
-                const scrollPosition = (cardWidth + gap) * index;
+                const maxScrollLeft = slider.scrollWidth - slider.offsetWidth;
 
-                slider.scrollTo({
-                    left: scrollPosition,
-                    behavior: "smooth",
-                });
+                if (index === dots.length - 1) {
+                    slider.scrollTo({
+                        left: maxScrollLeft,
+                        behavior: "smooth",
+                    });
+                } else {
+                    const scrollPosition = (cardWidth + gap) * index;
+                    slider.scrollTo({
+                        left: scrollPosition,
+                        behavior: "smooth",
+                    });
+                }
 
                 dots.forEach((d, i) => {
                     d.classList.toggle("promo__slider-dot--active", i === index);
