@@ -39,7 +39,6 @@
 .advantages__cards {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
   max-width: 1312px;
   margin: 0 auto;
   padding: 60px 0 50px 0;
